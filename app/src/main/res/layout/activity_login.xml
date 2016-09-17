@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    tools:context="com.apppartner.androidprogrammertest.LoginActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/activity_horizontal_margin">
+
+        <EditText
+            android:id="@+id/et_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/username"
+            android:imeOptions="actionNext"
+            android:background="@drawable/rounded_border_et"
+            android:textColorHint="@color/colorSecondary"
+            android:textSize="22sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="@dimen/et_padding"
+            android:paddingRight="@dimen/et_padding"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/et_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="22sp"
+            android:hint="@string/password"
+            android:background="@drawable/rounded_border_et"
+            android:textColorHint="@color/colorSecondary"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:layout_below="@+id/et_login_username"
+            android:paddingLeft="@dimen/et_padding"
+            android:paddingRight="@dimen/et_padding"
+            android:layout_centerHorizontal="true"
+            android:inputType="textPassword" />
+
+        <ImageView
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/btn_login"
+            android:layout_marginBottom="30dp"
+            android:onClick="onLoginClicked"
+            android:contentDescription="@string/login_button" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 158 ciObject found
+instanceKlass com/android/dx/dex/file/DexFile
+instanceKlass com/android/dx/dex/DexOptions
+instanceKlass com/android/dx/command/DxConsole
+instanceKlass com/android/dx/dex/cf/CfOptions
+instanceKlass com/android/dx/command/dexer/Main$Arguments$ArgumentsParser
+instanceKlass com/android/dx/command/dexer/Main$Arguments
+instanceKlass com/android/dx/cf/direct/AttributeFactory
+instanceKlass java/util/concurrent/Callable
+instanceKlass com/android/dx/cf/direct/ClassPathOpener$Consumer
+instanceKlass com/android/dx/cf/direct/ClassPathOpener$FileNameFilter
+instanceKlass com/android/dx/command/dexer/Main
+instanceKlass java/lang/Void
+instanceKlass java/lang/Class$MethodArray
+instanceKlass sun/launcher/LauncherHelper$FXHelper
