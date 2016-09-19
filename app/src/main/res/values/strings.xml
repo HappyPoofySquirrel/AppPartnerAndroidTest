@@ -20,8 +20,8 @@
     <string name="apppartner_icon">apppartner icon</string>
     <string name="title_activity_connect_three">Connect Three</string>
     <string name="new_game">New Game?</string>
-    <string name="winner_original">Original is the winner!</string>
-    <string name="winner_invert">Inverted is the winner!</string>
+    <string name="winner_app">AppPartner is the winner!</string>
+    <string name="winner_squirrel">Omg Squirrel is the winner!</string>
     <string name="draw">Draw</string>
     <string name="gride_place_holder">gride place holder</string>
     <string name="user_avatar">user avatar</string>

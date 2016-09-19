@@ -41,7 +41,7 @@ public class ConnectThreeActivity extends BaseActivity {
 
             } else {
 
-                counter.setImageResource(R.drawable.ic_apppartner_inverted);
+                counter.setImageResource(R.drawable.squirrel_game_icon);
                 activePlayer = 0;
 
             }
@@ -59,9 +59,9 @@ public class ConnectThreeActivity extends BaseActivity {
 
                     TextView winner = (TextView) findViewById(R.id.winnerMessage);
                     if (activePlayer == 1) {
-                        winner.setText(R.string.winner_original);
+                        winner.setText(R.string.winner_app);
                     } else {
-                        winner.setText(R.string.winner_invert);
+                        winner.setText(R.string.winner_squirrel);
                     }
                 } else {
                     boolean gamIsOver = true;
