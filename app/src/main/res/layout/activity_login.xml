@@ -5,54 +5,55 @@
     android:background="@drawable/bg_login"
     tools:context="com.apppartner.androidprogrammertest.LoginActivity">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="40dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        android:layout_margin="40dp"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/et_login_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/graphic_input"
             android:hint="@string/username"
             android:imeOptions="actionNext"
-            android:background="@drawable/graphic_input"
-            android:textColorHint="@color/colorSecondary"
-            android:textSize="22sp"
             android:paddingLeft="@dimen/et_padding"
             android:paddingRight="@dimen/et_padding"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="16dp" />
+            android:textColorHint="@color/colorSecondary"
+            android:textSize="22sp" />
 
         <EditText
             android:id="@+id/et_login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:hint="@string/password"
             android:background="@drawable/graphic_input"
-            android:textColorHint="@color/colorSecondary"
+            android:hint="@string/password"
             android:imeOptions="actionNext"
-            android:singleLine="true"
+            android:inputType="textPassword"
             android:paddingLeft="@dimen/et_padding"
             android:paddingRight="@dimen/et_padding"
-            android:inputType="textPassword" />
+            android:singleLine="true"
+            android:textColorHint="@color/colorSecondary"
+            android:textSize="22sp" />
 
         <ImageView
             android:id="@+id/imageButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/btn_login"
-            android:layout_marginTop="175dp"
-            android:onClick="onLoginClicked"
             android:layout_gravity="bottom|center_horizontal"
-            android:contentDescription="@string/login_button" />
+            android:layout_marginTop="175dp"
+            android:contentDescription="@string/login_button"
+            android:onClick="onLoginClicked"
+            android:src="@drawable/btn_login" />
 
     </LinearLayout>
 

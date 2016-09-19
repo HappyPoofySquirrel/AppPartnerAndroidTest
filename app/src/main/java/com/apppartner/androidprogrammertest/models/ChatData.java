@@ -10,8 +10,7 @@ import org.json.JSONObject;
  *
  * @author Thomas Colligan
  */
-public class ChatData
-{
+public class ChatData {
     private static final String LOG_TAG = "ChatData";
 
     public int userID;
@@ -19,19 +18,14 @@ public class ChatData
     public String avatarURL;
     public String message;
 
-    public ChatData(JSONObject jsonObject)
-    {
-        if (jsonObject != null)
-        {
-            try
-            {
+    public ChatData(JSONObject jsonObject) {
+        if (jsonObject != null) {
+            try {
                 userID = jsonObject.getInt("user_id");
                 username = jsonObject.getString("username");
                 avatarURL = jsonObject.getString("avatar_url");
                 message = jsonObject.getString("message");
-            }
-            catch (JSONException e)
-            {
+            } catch (JSONException e) {
                 Log.w(LOG_TAG, e);
             }
         }

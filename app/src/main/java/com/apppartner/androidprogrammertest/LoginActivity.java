@@ -1,7 +1,6 @@
 package com.apppartner.androidprogrammertest;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -34,22 +33,19 @@ public class LoginActivity extends BaseActivity {
     }
 
     public void onLoginClicked(View view) {
-        AuthController authController = new AuthController();
-        authController.login(mContext, "AppPartner", "qwerty");
+        String username = usernameV.getText().toString();
+        String password = passwordV.getText().toString();
 
-//        String username = usernameV.getText().toString();
-//        String password = passwordV.getText().toString();
-//
-//        if (username.isEmpty()) {
-//            usernameV.setError("Username cannot be blank");
-//        } else if (password.isEmpty()) {
-//            passwordV.setError("Password cannot be blank");
-//        } else {
-//            authController.login(mContext, username, password);
-//        }
+        if (username.isEmpty()) {
+            usernameV.setError(getString(R.string.blank_username));
+        } else if (password.isEmpty()) {
+            passwordV.setError(getString(R.string.blank_password));
+        } else {
+            AuthController authController = new AuthController();
+            authController.login(mContext, username, password);
+        }
 
     }
-
 
 
 }

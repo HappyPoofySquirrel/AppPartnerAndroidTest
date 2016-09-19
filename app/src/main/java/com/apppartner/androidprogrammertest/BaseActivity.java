@@ -1,13 +1,14 @@
 package com.apppartner.androidprogrammertest;
 
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 
-public abstract class BaseActivity extends ActionBarActivity  {
+public abstract class BaseActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+
     @Override
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
@@ -28,10 +29,8 @@ public abstract class BaseActivity extends ActionBarActivity  {
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         finish();
     }
-
 
 }

@@ -23,5 +23,9 @@
     <string name="winner_original">Original is the winner!</string>
     <string name="winner_invert">Inverted is the winner!</string>
     <string name="draw">Draw</string>
+    <string name="gride_place_holder">gride place holder</string>
+    <string name="user_avatar">user avatar</string>
+    <string name="blank_username">Username cannot be blank</string>
+    <string name="blank_password">Password cannot be blank</string>
 
 </resources>

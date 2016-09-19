@@ -30,28 +30,35 @@ public class ChatsArrayAdapter extends ArrayAdapter<ChatData> {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        ChatCell chatCell = new ChatCell();
 
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-
-        convertView = inflater.inflate(R.layout.cell_chat, parent, false);
-
-        chatCell.usernameTextView = (TextView) convertView.findViewById(R.id.usernameTextView);
-        chatCell.messageTextView = (TextView) convertView.findViewById(R.id.messageTextView);
-        chatCell.avatarImage = (ImageView) convertView.findViewById(R.id.imageView);
-
+        ChatCell chatCell;
         ChatData chatData = getItem(position);
+
+        if (convertView == null) {
+
+            chatCell = new ChatCell();
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+
+            convertView = inflater.inflate(R.layout.cell_chat, parent, false);
+
+            chatCell.usernameTextView = (TextView) convertView.findViewById(R.id.usernameTextView);
+            chatCell.messageTextView = (TextView) convertView.findViewById(R.id.messageTextView);
+            chatCell.avatarImage = (ImageView) convertView.findViewById(R.id.imageView);
+
+            String nameFontPath = "fonts/Jelloween - Machinato.ttf";
+            String messageFontPath = "fonts/Jelloween - Machinato Light.ttf";
+            Typeface nameTf = Typeface.createFromAsset(mContext.getAssets(), nameFontPath);
+            Typeface messageTf = Typeface.createFromAsset(mContext.getAssets(), messageFontPath);
+            chatCell.usernameTextView.setTypeface(nameTf);
+            chatCell.messageTextView.setTypeface(messageTf);
+
+            convertView.setTag(chatCell);
+        }
+
+        chatCell = (ChatCell) convertView.getTag();
 
         chatCell.usernameTextView.setText(chatData.username);
         chatCell.messageTextView.setText(chatData.message);
-
-        String nameFontPath = "fonts/Jelloween - Machinato.ttf";
-        String messageFontPath = "fonts/Jelloween - Machinato Light.ttf";
-        Typeface nameTf = Typeface.createFromAsset(mContext.getAssets(), nameFontPath);
-        Typeface messageTf = Typeface.createFromAsset(mContext.getAssets(), messageFontPath);
-        chatCell.usernameTextView.setTypeface(nameTf);
-        chatCell.messageTextView.setTypeface(messageTf);
-
         Picasso.with(mContext).load(chatData.avatarURL).transform(new ImageTranformer()).resize(200, 200).into(chatCell.avatarImage);
 
         return convertView;

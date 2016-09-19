@@ -1,10 +1,6 @@
 package com.apppartner.androidprogrammertest;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.ListView;
 
@@ -21,8 +17,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
-public class ChatActivity extends BaseActivity
-{
+public class ChatActivity extends BaseActivity {
     private static final String LOG_TAG = "ActionBarActivity";
     private ArrayList<ChatData> chatDataArrayList;
     private ChatsArrayAdapter chatsArrayAdapter;
@@ -30,31 +25,25 @@ public class ChatActivity extends BaseActivity
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-
 
 
         listView = (ListView) findViewById(R.id.listView);
         chatDataArrayList = new ArrayList<ChatData>();
 
-        try
-        {
+        try {
             String chatFileData = loadChatFile();
             JSONObject jsonData = new JSONObject(chatFileData);
             JSONArray jsonArray = jsonData.getJSONArray("data");
 
-            for (int i = 0; i < jsonArray.length(); i++)
-            {
+            for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 ChatData chatData = new ChatData(jsonObject);
                 chatDataArrayList.add(chatData);
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Log.w(LOG_TAG, e);
         }
 
@@ -63,9 +52,7 @@ public class ChatActivity extends BaseActivity
     }
 
 
-
-    private String loadChatFile() throws IOException
-    {
+    private String loadChatFile() throws IOException {
         InputStream inputStream = getResources().openRawResource(R.raw.chat_data);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -73,8 +60,7 @@ public class ChatActivity extends BaseActivity
         String receiveString;
         StringBuilder stringBuilder = new StringBuilder();
 
-        while ((receiveString = bufferedReader.readLine()) != null )
-        {
+        while ((receiveString = bufferedReader.readLine()) != null) {
             stringBuilder.append(receiveString);
             stringBuilder.append("\n");
         }
@@ -82,7 +68,6 @@ public class ChatActivity extends BaseActivity
         bufferedReader.close();
         inputStreamReader.close();
         inputStream.close();
-
 
         return stringBuilder.toString();
     }

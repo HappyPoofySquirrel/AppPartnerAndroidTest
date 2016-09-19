@@ -4,11 +4,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.widget.Toast;
 
 import com.apppartner.androidprogrammertest.services.AuthServices;
-import com.apppartner.androidprogrammertest.MainActivity;
 import com.apppartner.androidprogrammertest.models.LoginResponse;
 
 import java.lang.annotation.Annotation;
@@ -54,6 +52,7 @@ public class AuthController {
                         LoginResponse error = errorConverter.convert(response.errorBody());
                         oneBtnAlert(mContext, error, timeDiff, false);
                     } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
             }
@@ -69,12 +68,12 @@ public class AuthController {
 
         AlertDialog dialog = new AlertDialog.Builder(mContext)
                 .setTitle(loginResponse.getCode())
-                .setMessage(loginResponse.getMessage() + " Duration: " + String.valueOf(timeDiff) + " Milliseconds")
+                .setMessage(loginResponse.getMessage() + " Duration: " + String.valueOf(timeDiff) + "ms")
                 .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if (isSuccessful) {
-                            ((Activity)mContext).finish();
+                            ((Activity) mContext).finish();
                         }
                     }
                 })
