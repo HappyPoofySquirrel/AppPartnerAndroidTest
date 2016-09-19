@@ -1,12 +1,11 @@
 package com.apppartner.androidprogrammertest;
 
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 
-public class BaseActivity extends ActionBarActivity {
+public abstract class BaseActivity extends ActionBarActivity  {
 
     Toolbar toolbar;
     @Override
@@ -27,4 +26,12 @@ public class BaseActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        finish();
+    }
+
+
 }

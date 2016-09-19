@@ -21,17 +21,15 @@ import java.util.List;
  *
  * @author Thomas Colligan
  */
-public class ChatsArrayAdapter extends ArrayAdapter<ChatData>
-{
+public class ChatsArrayAdapter extends ArrayAdapter<ChatData> {
     Context mContext;
-    public ChatsArrayAdapter(Context context, List<ChatData> objects)
-    {
+
+    public ChatsArrayAdapter(Context context, List<ChatData> objects) {
         super(context, 0, objects);
-        mContext=context;
+        mContext = context;
     }
 
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
+    public View getView(int position, View convertView, ViewGroup parent) {
         ChatCell chatCell = new ChatCell();
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -40,7 +38,7 @@ public class ChatsArrayAdapter extends ArrayAdapter<ChatData>
 
         chatCell.usernameTextView = (TextView) convertView.findViewById(R.id.usernameTextView);
         chatCell.messageTextView = (TextView) convertView.findViewById(R.id.messageTextView);
-        chatCell.avatarImage=(ImageView) convertView.findViewById(R.id.imageView);
+        chatCell.avatarImage = (ImageView) convertView.findViewById(R.id.imageView);
 
         ChatData chatData = getItem(position);
 
@@ -48,7 +46,7 @@ public class ChatsArrayAdapter extends ArrayAdapter<ChatData>
         chatCell.messageTextView.setText(chatData.message);
 
         String nameFontPath = "fonts/Jelloween - Machinato.ttf";
-        String messageFontPath= "fonts/Jelloween - Machinato Light.ttf";
+        String messageFontPath = "fonts/Jelloween - Machinato Light.ttf";
         Typeface nameTf = Typeface.createFromAsset(mContext.getAssets(), nameFontPath);
         Typeface messageTf = Typeface.createFromAsset(mContext.getAssets(), messageFontPath);
         chatCell.usernameTextView.setTypeface(nameTf);
@@ -59,8 +57,7 @@ public class ChatsArrayAdapter extends ArrayAdapter<ChatData>
         return convertView;
     }
 
-    private static class ChatCell
-    {
+    private static class ChatCell {
         TextView usernameTextView;
         TextView messageTextView;
         ImageView avatarImage;

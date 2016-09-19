@@ -62,12 +62,7 @@ public class ChatActivity extends BaseActivity
         listView.setAdapter(chatsArrayAdapter);
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+
 
     private String loadChatFile() throws IOException
     {

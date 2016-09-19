@@ -1,5 +1,6 @@
 package com.apppartner.androidprogrammertest.controllers;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -73,8 +74,7 @@ public class AuthController {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if (isSuccessful) {
-                            Intent intent = new Intent(mContext, MainActivity.class);
-                            mContext.startActivity(intent);
+                            ((Activity)mContext).finish();
                         }
                     }
                 })

@@ -14,5 +14,14 @@
     <string name="animation_test_button">animation test button</string>
     <string name="username">username</string>
     <string name="password">password</string>
+    <string name="animate_bonus">bonus points for creativity.</string>
+    <string name="animate_prompt" formatted="false">Animate the App Partner icon. Make it fade to 0% alpha and then to 100% alpha when the fade button is pressed. Allow it to be dragged around the screen by touching and dragging.</string>
+    <string name="fade_button">fade button</string>
+    <string name="apppartner_icon">apppartner icon</string>
+    <string name="title_activity_connect_three">Connect Three</string>
+    <string name="new_game">New Game?</string>
+    <string name="winner_original">Original is the winner!</string>
+    <string name="winner_invert">Inverted is the winner!</string>
+    <string name="draw">Draw</string>
 
 </resources>

@@ -1,11 +1,78 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.apppartner.androidprogrammertest.AnimationActivity"
-    android:background="@drawable/bg_animation">
+    android:background="@drawable/bg_animation"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context="com.apppartner.androidprogrammertest.AnimationActivity">
 
-    <include layout="@layout/toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/bg_cell_animation_test"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/animatePrompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/animate_prompt"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/animateBonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="@string/animate_bonus"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/apppartner_icon"
+            android:src="@drawable/ic_apppartner" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/fadeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/parentLayout"
+        android:layout_alignLeft="@+id/parentLayout"
+        android:layout_alignRight="@+id/parentLayout"
+        android:layout_alignStart="@+id/parentLayout"
+        android:layout_below="@+id/parentLayout"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/fade_button"
+        android:onClick="animateAlpha"
+        android:src="@drawable/btn_fade" />
 
 </RelativeLayout>
